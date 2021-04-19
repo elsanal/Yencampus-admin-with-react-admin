@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {Admin, Resource} from 'react-admin'
+import {FirebaseAuthProvider,FirebaseDataProvider,FirebaseRealTimeSaga} from 'react-admin-firebase';
+import {PostList} from './Posts/PostList'
+import {PostCreate} from './Posts/PostCreate'
+import {PostEdit} from './Posts/PostEdit'
+
+
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAjGyaNmnnEh2SUn92WWfa6QvXbi10R0Ag",
+  authDomain: "campus-2cc6f.firebaseapp.com",
+  projectId: "campus-2cc6f",
+  storageBucket: "campus-2cc6f.appspot.com",
+  messagingSenderId: "75151118571",
+  appId: "1:75151118571:web:8dcda8e0b3a632cabb6eae",
+  measurementId: "G-4CFS4F4BNL"
+};
+
+const dataProvider = FirebaseDataProvider(firebaseConfig);//
+const authProvider = FirebaseAuthProvider(firebaseConfig);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Admin 
+      // dashboard={Dashboard} 
+      dataProvider={dataProvider} 
+      authProvider={authProvider}
+      // customSagas={[firebaseRealtime]}
+      >
+        <Resource name="university" list={PostList} create={PostCreate} edit={PostEdit}/>
+        <Resource name="scholarship" list={PostList} create={PostCreate} edit={PostEdit}/>
+        <Resource name="job" list={PostList} create={PostCreate} edit={PostEdit}/>
+        <Resource name="carrer" list={PostList} create={PostCreate} edit={PostEdit}/>
+        <Resource name="student_life" list={PostList} create={PostCreate} edit={PostEdit}/>
+        <Resource name="study_abroad" list={PostList} create={PostCreate} edit={PostEdit}/>
+        <Resource name="videos" list={PostList} create={PostCreate} edit={PostEdit}/>
+        <Resource name="divers" list={PostList} create={PostCreate} edit={PostEdit}/>
+      </Admin>
   );
 }
 
