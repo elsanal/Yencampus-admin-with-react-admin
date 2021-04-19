@@ -123,4 +123,4 @@ var category = [
      </SimpleForm>
  </Create>
    )
-        }
+}

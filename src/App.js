@@ -1,6 +1,8 @@
 
 import {Admin, Resource} from 'react-admin'
 import {FirebaseAuthProvider,FirebaseDataProvider,FirebaseRealTimeSaga} from 'react-admin-firebase';
+import {CareerList,CareerEdit,CareerCreate} from './Fields/Careers'
+
 import {PostList} from './Posts/PostList'
 import {PostCreate} from './Posts/PostCreate'
 import {PostEdit} from './Posts/PostEdit'
@@ -32,7 +34,7 @@ function App() {
         <Resource name="university" list={PostList} create={PostCreate} edit={PostEdit}/>
         <Resource name="scholarship" list={PostList} create={PostCreate} edit={PostEdit}/>
         <Resource name="job" list={PostList} create={PostCreate} edit={PostEdit}/>
-        <Resource name="carrer" list={PostList} create={PostCreate} edit={PostEdit}/>
+        <Resource name="career" list={CareerList} create={CareerCreate} edit={CareerEdit}/>
         <Resource name="student_life" list={PostList} create={PostCreate} edit={PostEdit}/>
         <Resource name="study_abroad" list={PostList} create={PostCreate} edit={PostEdit}/>
         <Resource name="videos" list={PostList} create={PostCreate} edit={PostEdit}/>
