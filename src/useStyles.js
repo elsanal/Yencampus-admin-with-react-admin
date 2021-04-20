@@ -1,7 +1,4 @@
 import {
-    fade,
-    ThemeProvider,
-    withStyles,
     makeStyles,
     createMuiTheme,
   } from '@material-ui/core/styles';
@@ -13,16 +10,43 @@ import {
 
 
 const useStyles = makeStyles((theme) => ({
+  appBar:{
+
+  },
+  drawer:{
+
+  },
+  layout:{
+
+  },
     create:{
-      padding:50,
+      paddingLeft:25,
+      paddingRight:25,
+      paddingBottom:25,
       alignSelf:'center',
       width:'90%',
-      backgroundColor:'#212121',
+      backgroundColor:'#FFFFFF',
     },
-    form:{
+    listForm:{
+      paddingLeft:25,
+      paddingRight:25,
+      paddingBottom:25,
+      alignSelf:'center',
+      width:'90%',
+      backgroundColor:'#FFFFFF',
+    },
+    editForm:{
+      paddingLeft:25,
+      paddingRight:25,
+      paddingBottom:25,
+      alignSelf:'center',
+      width:'90%',
+      backgroundColor:'#FFFFFF',
+    },
+    simpleForm:{
     //   marginLeft:100,
     //   marginRight:100,
-      backgroundColor:'white',
+      // backgroundColor:'#FFFFFF',
       width: '100%', // Fix IE 11 issue.
       marginTop: theme.spacing(1),
       backgroundImage:`url({"../icon.jpeg"})`
@@ -30,33 +54,44 @@ const useStyles = makeStyles((theme) => ({
     textInput:{
     //   paddingRight:200,
       width:'100%',
-      backgroundColor:'#FFFFFF',
+      // backgroundColor:'#FFFFFF',
       color:'white',
       textdecoration:'none',
       fontSize:'40px',
       fontWeight:'bold',
-    //   border: '2px solid black',
+      // border: '2px solid black',
       textColor:"red",
       variant:'outlined'
     },
+    textField:{
+      //   paddingRight:200,
+        width:'100%',
+        // backgroundColor:'#FFFFFF',
+        color:'white',
+        textdecoration:'none',
+        fontSize:'40px',
+        fontWeight:'bold',
+      //   border: '2px solid black',
+        textColor:"red",
+        variant:'outlined'
+      },
     selectInput:{
         display:'inline-flex',
-          backgroundColor:'#FFFFFF',
+          // backgroundColor:'#FFFFFF',
           fontWeight:'bold',
         //   border: '2px solid black',
           color:'red',
           textColor:"red"
         },
-    image: {
-      width:"100%",
-      height:"100%",
-      backgroundColor:'white',
-      color:"orange"
+    imageInput: {
+      // width:"100%",
+      // height:"100%",
+      
     },
-    selectedImg:{
+    imageField:{
       width:"100%",
       height:"100%",
-
+     
     },
     richText:{
       margin:10, 
@@ -65,31 +100,33 @@ const useStyles = makeStyles((theme) => ({
       width:'50%',
       backgroundColor:'white'
     },
-    tabbedForm:{
-        margin:10, 
-        paddingBottom:100,
+    boolanInput:{
+        display:'inline-flex',
         width:'50%',
-        backgroundColor:'red'
+        // backgroundColor:'white'
       },
-    paper: {
-      marginTop: theme.spacing(8),
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
-    input:{
-        width:600,
-    },
-    avatar: {
-      margin: theme.spacing(1),
-      backgroundColor: theme.palette.secondary.main,
-    },
-    // form: {
-    
-    // },
-    submit: {
-      margin: theme.spacing(3, 0, 2),
-    },
+      dateInput:{
+        width:'300px',
+        // backgroundColor:'white'
+      },
+      editButton:{
+        backgroundColor:'black'
+      },  
+      dataGrid:{
+        margin:0, 
+        backgroundColor:'white'
+      },
+      div:{
+        color:'green',
+        fontWeight:'bold',
+        textalign:'center',
+        fontSize:'25px',
+        marginBottom:'25px',
+      },
+      space:{
+        marginTop:'50px',
+      }
+      
   }));
 
 

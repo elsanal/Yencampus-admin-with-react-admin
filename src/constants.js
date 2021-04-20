@@ -61,19 +61,19 @@ var level =  {
     ],
     "en":[
         {
-            id:"all",
+            id:"All countries",
             name:"All countries"
         },
         {
-            id:"undergraduate",
-            named:"Undergraduate"
+            id:"Undergraduate",
+            name:"Undergraduate"
         },
         {
-            id:"master",
+            id:"Master",
             name:"Master"
         },
         {
-            id:"phd",
+            id:"PhD",
             name:"PhD"
         },
         {
@@ -87,23 +87,23 @@ var level =  {
 
 var year =[
     {
-        id:"1",
+        id:"2021 - 2022",
         name:"2021 - 2022"
     },
     {
-        id:"2",
+        id:"2022 - 2023",
         name:"2022 - 2023"
     },
     {
-        id:"3",
+        id:"2023 - 2024",
         name:"2023 - 2024"
     },
     {
-        id:"4",
+        id:"2024 - 2025",
         name:"2024 - 2025"
     },
     {
-        id:"5",
+        id:"2025 - 2026",
         name:"2025 - 2026"
     },
 ]
