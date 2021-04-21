@@ -30,11 +30,6 @@ const MyAppBar = props =>{
     };
 
     
-    
-    //   const toggleDrawer = (event)=>{
-    //       setState = !state;
-    //       return state;
-    //     }
 
     return(
         <AppBar {...props} className={classes.appBar}>
