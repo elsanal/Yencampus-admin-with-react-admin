@@ -1,5 +1,5 @@
 import firebase from "firebase";
-
+import {FirebaseAuthProvider,FirebaseDataProvider} from 'react-admin-firebase';
 const firebaseConfig = {
     apiKey: "AIzaSyAjGyaNmnnEh2SUn92WWfa6QvXbi10R0Ag",
     authDomain: "campus-2cc6f.firebaseapp.com",
@@ -10,8 +10,13 @@ const firebaseConfig = {
     measurementId: "G-4CFS4F4BNL"
   };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const db = firebaseApp.firestore();
+// const db = firebaseApp.firestore();
+// firebase.initializeApp(firebaseConfig);
 
-export default db;
+const dataProvider = FirebaseDataProvider(firebaseConfig);//
+const authProvider = FirebaseAuthProvider(firebaseConfig);
+
+
+export  {dataProvider,authProvider};

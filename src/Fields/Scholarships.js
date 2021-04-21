@@ -2,11 +2,11 @@ import * as React from "react";
 import RichTextInput from 'ra-input-rich-text';
 import {withStyles} from '@material-ui/core/styles';
 import {
-    Create,SimpleForm,ChipField,AutocompleteInput,UrlField,
-    ReferenceInput,SelectInput,BooleanInput,ReferenceArrayInput,
-    TextInput,Filter,ImageInput,ImageField, SelectArrayInput,NumberField,
-    NumberInput,List,Datagrid,TextField,SimpleList,Edit,BooleanField,
-    EditButton,ReferenceField,DateField, DateInput,required,minLength,
+    Create,SimpleForm,ArrayInput,SimpleFormIterator,
+    SelectInput,BooleanInput,
+    TextInput,ImageInput,ImageField, SelectArrayInput,NumberField,
+    List,Datagrid,TextField,Edit,
+    EditButton,DateField, DateInput,required,minLength,
 } from 'react-admin';
 import { useMediaQuery } from '@material-ui/core';
 import useStyles from '../useStyles' 
@@ -97,10 +97,14 @@ import { TrendingUpRounded } from "@material-ui/icons";
         <DateInput source="deadline" validate={required()} className={classes.dateInput} helperText="Deadline" label=""/>
          <BooleanInput defaultValue = {false} source="isTopScholar"  
          label="is it a top scholarship?" className={classes.boolanInput}/>
-         <ImageInput source="src" accept="image/*.jpg,.jpeg,.gif,.png" label="" 
-         helperText="Select an image" validate={required()} className={classes.imageInput}>
-             <ImageField source="src"  />
-         </ImageInput>
+         <ArrayInput source="images">
+           <SimpleFormIterator>
+                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
+              helperText="Select an image" validate={required()} className={classes.imageInput}>
+                  <ImageField source="src"  />
+              </ImageInput>
+           </SimpleFormIterator>
+         </ArrayInput>
 
      </SimpleForm>
  </Create>
@@ -177,10 +181,14 @@ export function ScholarshipEdit(props){
         <DateInput source="deadline" validate={required()} className={classes.dateInput} helperText="Deadline" label=""/>
          <BooleanInput defaultValue = {false} source="isTopScholar"  
          label="is it a top scholarship?" className={classes.boolanInput}/>
-         <ImageInput source="src" accept="image/*.jpg,.jpeg,.gif,.png" label="" 
-         helperText="Select an image" validate={required()} className={classes.imageInput}>
-             <ImageField source="src"  />
-         </ImageInput>
+         <ArrayInput source="images">
+           <SimpleFormIterator>
+                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
+              helperText="Select an image" validate={required()} className={classes.imageInput}>
+                  <ImageField source="src"  />
+              </ImageInput>
+           </SimpleFormIterator>
+         </ArrayInput>
      </SimpleForm>
     </Edit>
     )

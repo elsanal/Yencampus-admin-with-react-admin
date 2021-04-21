@@ -2,9 +2,9 @@ import * as React from "react";
 import RichTextInput from 'ra-input-rich-text';
 import {withStyles} from '@material-ui/core/styles';
 import {
-    Create,SimpleForm,RichTextField,
+    Create,SimpleForm,RichTextField,SimpleFormIterator,
     TextInput,ImageInput,ImageField, 
-    List,Datagrid,TextField,Edit,
+    List,Datagrid,TextField,Edit,ArrayInput,
     EditButton,DateField,required,minLength,
 } from 'react-admin';
 
@@ -56,11 +56,14 @@ import useStyles from '../useStyles'
         <RichTextInput source="desadvantage_french" validate={validateRich}   label="" 
          helperText="Entrez les desadvantages" validate={validateRich} />
          <div className={classes.space}> </div>
-         <ImageInput source="src" accept="image/*.jpg,.jpeg,.gif,.png" label="" 
-         helperText="Select an image" validate={required()} className={classes.imageInput}>
-             <ImageField source="src"  />
-         </ImageInput>
-
+         <ArrayInput source="images">
+           <SimpleFormIterator>
+                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
+              helperText="Select an image" validate={required()} className={classes.imageInput}>
+                  <ImageField source="src"  />
+              </ImageInput>
+           </SimpleFormIterator>
+         </ArrayInput>
      </SimpleForm>
  </Create>
    )
@@ -79,7 +82,6 @@ export function CareerEdit(props){
       <div className={classes.div} >English Inputs</div>
          <TextInput source="name_english" validate={validateText} className={classes.textInput} 
          label="Name of the career"  variant="outlined" InputLabelProps={{shrink: true,}}/>
-  
         <RichTextInput source="description_english" validate={validateRich}   label="" 
          helperText="Enter the description" />
         <RichTextInput source="advantage_english" validate={validateRich}   label="" 
@@ -98,10 +100,14 @@ export function CareerEdit(props){
         <RichTextInput source="desadvantage_french" validate={validateRich}   label="" 
          helperText="Entrez les desadvantages" validate={validateRich} />
          <div className={classes.space}> </div>
-         <ImageInput source="src" accept="image/*.jpg,.jpeg,.gif,.png" label="" 
-         helperText="Select an image" validate={required()} className={classes.imageInput}>
-             <ImageField source="src"  />
-         </ImageInput>
+         <ArrayInput source="images">
+           <SimpleFormIterator>
+                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
+              helperText="Select an image" validate={required()} className={classes.imageInput}>
+                  <ImageField source="src"  />
+              </ImageInput>
+           </SimpleFormIterator>
+         </ArrayInput>
      </SimpleForm>
     </Edit>
     )
@@ -110,7 +116,7 @@ export function CareerEdit(props){
 const date = new Date().toISOString().substr(0, 10)
 
 const postRowStyle = (record) => ({
-  backgroundColor: record.deadline < date ? 'red' : 'green',
+  backgroundColor: record.lastupdate > record.createdate ? 'green' : 'white',
   color:'black',
   fontWeight:'bold',
 });
