@@ -13,8 +13,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap:'wrap',
     width: '100vw',
     backgroundColor:'#291B1B',
-    alignItems:'center',
-    justifyItems:"space-between"
+    // alignItems:'end',
   },
   drawer:{
     paddingLeft:25,
@@ -29,10 +28,11 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor:'#111010',
   },
   avatar:{
-    flex:'inline',
-    paddingLeft:90,
+    // flex:'10%',
+    left:'75vw',
     // width:'100%',
-    backgroundColor:'#C47A7A',
+    backgroundColor:'#552F2F',
+    alignSelf:'left',
   },
     create:{
       paddingLeft:25,

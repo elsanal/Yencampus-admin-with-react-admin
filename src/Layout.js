@@ -32,7 +32,9 @@ const MyAppBar = props =>{
     
 
     return(
-        <AppBar {...props} className={classes.appBar}>
+        <AppBar {...props} >
+
+            <div className={classes.appBar}>
             <Toolbar >
                 <IconButton edge="start" color="inherit" aria-label="menu">
                         <MenuIcon />
@@ -40,13 +42,19 @@ const MyAppBar = props =>{
                     <Typography  variant="h6" >
                         Admin console
                     </Typography>
-                    <IconButton edge="end"  onClick={handleChange} >
-                        <Avatar  alt="admin" src={logo} />
-                </IconButton>
+                    <IconButton className={classes.avatar}  onClick={handleChange} >
+                        <Avatar   alt="admin" src={logo} />
+                        <Typography  edge="end" variant="h6" >
+                        Logout
+                       </Typography>
+                   </IconButton>
+                   
                 
             </Toolbar>
-           
+            </div>
+
         </AppBar>
+
         
     )
 }
