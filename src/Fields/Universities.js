@@ -3,7 +3,7 @@ import RichTextInput from 'ra-input-rich-text';
 import {withStyles} from '@material-ui/core/styles';
 import {
     Create,SimpleForm,ArrayInput,SimpleFormIterator,
-    SelectInput,BooleanInput,
+    SelectInput,BooleanInput,AutocompleteArrayInput,AutocompleteInput,
     TextInput,ImageInput,ImageField, SelectArrayInput,NumberField,
     NumberInput,List,Datagrid,TextField,Edit,
     EditButton,DateField, DateInput,required,minLength,
@@ -40,11 +40,11 @@ import { TrendingUpRounded } from "@material-ui/icons";
          <div className={classes.div} >English Inputs</div>
          <TextInput source="name_english" validate={validateText} className={classes.textInput} 
          label="Name of the university"  variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <SelectInput source="country_english"  className={classes.selectInput} choices={countries.en} 
+         <AutocompleteInput source="country_english"  className={classes.selectInput} choices={countries.en} 
          label="University country" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-        <SelectArrayInput source="major_english"  className={classes.selectInput} choices={level.fr} 
+        <AutocompleteArrayInput source="major_english"  className={classes.selectInput} choices={level.fr} 
          label="Select majors or department" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <SelectArrayInput source="top_major_english"  className={classes.selectInput} choices={level.fr} 
+         <AutocompleteArrayInput source="top_major_english"  className={classes.selectInput} choices={level.fr} 
          label="Select the best majors or department" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_english" validate={validateRich}   label="" 
          helperText="Enter the description" />
@@ -53,11 +53,11 @@ import { TrendingUpRounded } from "@material-ui/icons";
          <div className={classes.div}>French Inputs</div>
          <TextInput source="name_french" validate={validateText} className={classes.textInput} 
          label="Nom de l'university"  variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <SelectInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
+         <AutocompleteInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
          label="Pays de l'university" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <SelectArrayInput source="major_french"  className={classes.selectInput} choices={level.fr} 
+         <AutocompleteArrayInput source="major_french"  className={classes.selectInput} choices={level.fr} 
          label="Choisir les filieres ou departements" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <SelectArrayInput source="top_major_french"  className={classes.selectInput} choices={level.fr} 
+         <AutocompleteArrayInput source="top_major_french"  className={classes.selectInput} choices={level.fr} 
          label="Choisir les meilleures filieres ou departements" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_french" validate={validateRich}   label="" 
          helperText="Entrez la description" />
@@ -83,6 +83,8 @@ import { TrendingUpRounded } from "@material-ui/icons";
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
+              <TextInput source="img_title" validate={validateText} className={classes.textInput} 
+              label="Enter the title of the image"  variant="outlined" InputLabelProps={{shrink: true,}}/>
            </SimpleFormIterator>
          </ArrayInput>
 
@@ -104,11 +106,11 @@ export function UniversityEdit(props){
       <div className={classes.div} >English Inputs</div>
          <TextInput source="name_english" validate={validateText} className={classes.textInput} 
          label="Name of the university"  variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <SelectInput source="country_english"  className={classes.selectInput} choices={countries.en} 
+         <AutocompleteInput source="country_english"  className={classes.selectInput} choices={countries.en} 
          label="University country" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-        <SelectArrayInput source="major_english"  className={classes.selectInput} choices={level.fr} 
+        <AutocompleteArrayInput source="major_english"  className={classes.selectInput} choices={level.fr} 
          label="Select majors or department" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <SelectArrayInput source="top_major_english"  className={classes.selectInput} choices={level.fr} 
+         <AutocompleteArrayInput source="top_major_english"  className={classes.selectInput} choices={level.fr} 
          label="Select the best majors or department" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_english" validate={validateRich}   label="" 
          helperText="Enter the description" />
@@ -117,11 +119,11 @@ export function UniversityEdit(props){
          <div className={classes.div}>French Inputs</div>
          <TextInput source="name_french" validate={validateText} className={classes.textInput} 
          label="Nom de l'university"  variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <SelectInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
+         <AutocompleteInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
          label="Pays de l'university" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <SelectArrayInput source="major_french"  className={classes.selectInput} choices={level.fr} 
+         <AutocompleteArrayInput source="major_french"  className={classes.selectInput} choices={level.fr} 
          label="Choisir les filieres ou departements" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <SelectArrayInput source="top_major_french"  className={classes.selectInput} choices={level.fr} 
+         <AutocompleteArrayInput source="top_major_french"  className={classes.selectInput} choices={level.fr} 
          label="Choisir les meilleures filieres ou departements" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_french" validate={validateRich}   label="" 
          helperText="Entrez la description" />
@@ -137,8 +139,8 @@ export function UniversityEdit(props){
         <DateInput source="deadline" validate={required()} className={classes.dateInput} helperText="Deadline" label=""/>
          <BooleanInput defaultValue = {false} source="isTopUniversity"  
          label="is it a top university?" className={classes.boolanInput}/>
-          <NumberInput source="worl_ranking" validate={validateText} className={classes.textInput} 
-         label="Worl ranking"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+          <NumberInput source="world_ranking" validate={validateText} className={classes.textInput} 
+         label="World ranking"  variant="outlined" InputLabelProps={{shrink: true,}}/>
           <NumberInput source="national_ranking" validate={validateText} className={classes.textInput} 
          label="National ranking"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <ArrayInput source="images">
@@ -147,6 +149,8 @@ export function UniversityEdit(props){
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
+              <TextInput source="img_title" validate={validateText} className={classes.textInput} 
+              label="Enter the title of the image"  variant="outlined" InputLabelProps={{shrink: true,}}/>
            </SimpleFormIterator>
          </ArrayInput>
      </SimpleForm>

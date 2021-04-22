@@ -2,7 +2,7 @@ import * as React from "react";
 import RichTextInput from 'ra-input-rich-text';
 import {withStyles} from '@material-ui/core/styles';
 import {
-    Create,SimpleForm,SimpleFormIterator,ArrayInput,
+    Create,SimpleForm,SimpleFormIterator,ArrayInput,AutocompleteArrayInput,AutocompleteInput,
     ReferenceInput,SelectInput,BooleanInput,ReferenceArrayInput,
     TextInput,Filter,ImageInput,ImageField, SelectArrayInput,NumberField,
     NumberInput,List,Datagrid,TextField,SimpleList,Edit,BooleanField,
@@ -39,7 +39,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
     <SimpleForm className={classes.simpleForm} redirect="list" warnWhenUnsavedChanges>
          <div className={classes.div} >English Inputs</div>
          <TextInput source="name_english" validate={validateText} className={classes.textInput} 
-         label="Name of the scholarship"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         label="Name of the video"  variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_english" validate={validateRich}   label="" 
          helperText="Enter the description" />
        
@@ -47,7 +47,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
 
          <div className={classes.div}>French Inputs</div>
          <TextInput source="name_french" validate={validateText} className={classes.textInput} 
-         label="Nom de la bourse"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         label="Nom de la video"  variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_french" validate={validateRich}   label="" 
          helperText="Entrez la description" />
          <div className={classes.space}> </div>
@@ -59,6 +59,8 @@ import { TrendingUpRounded } from "@material-ui/icons";
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
+              <TextInput source="img_title" validate={validateText} className={classes.textInput} 
+              label="Enter the title of the image"  variant="outlined" InputLabelProps={{shrink: true,}}/>
            </SimpleFormIterator>
          </ArrayInput>
          <TextInput source="video_link" validate={validateText} className={classes.textInput} 
@@ -81,7 +83,7 @@ export function LifeEdit(props){
       <SimpleForm className={classes.simpleForm} redirect="list" warnWhenUnsavedChanges>
       <div className={classes.div} >English Inputs</div>
          <TextInput source="name_english" validate={validateText} className={classes.textInput} 
-         label="Name of the scholarship"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         label="Name of the video"  variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_english" validate={validateRich}   label="" 
          helperText="Enter the description" />
        
@@ -89,7 +91,7 @@ export function LifeEdit(props){
 
          <div className={classes.div}>French Inputs</div>
          <TextInput source="name_french" validate={validateText} className={classes.textInput} 
-         label="Nom de la bourse"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         label="Nom de la video"  variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_french" validate={validateRich}   label="" 
          helperText="Entrez la description" />
          <div className={classes.space}> </div>
@@ -101,6 +103,8 @@ export function LifeEdit(props){
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
+              <TextInput source="img_title" validate={validateText} className={classes.textInput} 
+              label="Enter the title of the image"  variant="outlined" InputLabelProps={{shrink: true,}}/>
            </SimpleFormIterator>
          </ArrayInput>
          <TextInput source="video_link" validate={validateText} className={classes.textInput} 

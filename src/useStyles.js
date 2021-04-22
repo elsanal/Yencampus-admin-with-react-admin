@@ -29,9 +29,9 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar:{
     // flex:'10%',
-    left:'75vw',
+    left:'73vw',
     // width:'100%',
-    backgroundColor:'#552F2F',
+    backgroundColor:'transparent',
     alignSelf:'left',
   },
     create:{
@@ -97,7 +97,8 @@ const useStyles = makeStyles((theme) => ({
           fontWeight:'bold',
         //   border: '2px solid black',
           color:'red',
-          textColor:"red"
+          textColor:"red",
+          width:'100%',
         },
     imageInput: {
       // width:"100%",

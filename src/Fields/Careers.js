@@ -3,7 +3,7 @@ import RichTextInput from 'ra-input-rich-text';
 import {withStyles} from '@material-ui/core/styles';
 import {
     Create,SimpleForm,RichTextField,SimpleFormIterator,
-    TextInput,ImageInput,ImageField, 
+    TextInput,ImageInput,ImageField,AutocompleteArrayInput,AutocompleteInput, 
     List,Datagrid,TextField,Edit,ArrayInput,
     EditButton,DateField,required,minLength,
 } from 'react-admin';
@@ -37,7 +37,6 @@ import useStyles from '../useStyles'
          <div className={classes.div} >English Inputs</div>
          <TextInput source="name_english" validate={validateText} className={classes.textInput} 
          label="Name of the career"  variant="outlined" InputLabelProps={{shrink: true,}}/>
-  
         <RichTextInput source="description_english" validate={validateRich}   label="" 
          helperText="Enter the description" />
         <RichTextInput source="advantage_english" validate={validateRich}   label="" 
@@ -62,6 +61,8 @@ import useStyles from '../useStyles'
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
+              <TextInput source="img_title" validate={validateText} className={classes.textInput} 
+              label="Enter the title of the image"  variant="outlined" InputLabelProps={{shrink: true,}}/>
            </SimpleFormIterator>
          </ArrayInput>
      </SimpleForm>
@@ -106,6 +107,8 @@ export function CareerEdit(props){
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
+              <TextInput source="img_title" validate={validateText} className={classes.textInput} 
+              label="Enter the title of the image"  variant="outlined" InputLabelProps={{shrink: true,}}/>
            </SimpleFormIterator>
          </ArrayInput>
      </SimpleForm>

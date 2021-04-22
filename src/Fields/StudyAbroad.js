@@ -2,7 +2,7 @@ import * as React from "react";
 import RichTextInput from 'ra-input-rich-text';
 import {withStyles} from '@material-ui/core/styles';
 import {
-    Create,SimpleForm,ArrayInput,
+    Create,SimpleForm,ArrayInput,AutocompleteArrayInput,AutocompleteInput,
     ReferenceInput,SelectInput,BooleanInput,SimpleFormIterator,
     TextInput,Filter,ImageInput,ImageField, SelectArrayInput,NumberField,
     NumberInput,List,Datagrid,TextField,SimpleList,Edit,BooleanField,
@@ -38,7 +38,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
     <Create {...props} className={classes.create} transform={transform}>
     <SimpleForm className={classes.simpleForm} redirect="list" warnWhenUnsavedChanges>
          <div className={classes.div} >English Inputs</div>
-         <SelectInput source="country_english"  className={classes.selectInput} choices={countries.en} 
+         <AutocompleteInput source="country_english"  className={classes.selectInput} choices={countries.en} 
          label="Destination country" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="advantage_english" validate={validateRich}   label="" 
          helperText="Enter the in this country" />
@@ -48,7 +48,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
         <div className={classes.space}> </div>
 
          <div className={classes.div}>French Inputs</div>
-         <SelectInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
+         <AutocompleteInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
          label="Pays de destination" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="advantage_french" validate={validateRich}   label="" 
          helperText="Entrez les avantages dans ce pays" validate={validateRich} />
@@ -64,6 +64,8 @@ import { TrendingUpRounded } from "@material-ui/icons";
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
+              <TextInput source="img_title" validate={validateText} className={classes.textInput} 
+              label="Enter the title of the image"  variant="outlined" InputLabelProps={{shrink: true,}}/>
            </SimpleFormIterator>
          </ArrayInput>
         
@@ -83,7 +85,7 @@ export function AbroadEdit(props){
     <Edit {...props} className={classes.editForm} title={<PostTitle/>}>
       <SimpleForm className={classes.simpleForm} redirect="list" warnWhenUnsavedChanges>
       <div className={classes.div} >English Inputs</div>
-         <SelectInput source="country_english"  className={classes.selectInput} choices={countries.en} 
+         <AutocompleteInput source="country_english"  className={classes.selectInput} choices={countries.en} 
          label="Destination country" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="advantage_english" validate={validateRich}   label="" 
          helperText="Enter the in this country" />
@@ -93,7 +95,7 @@ export function AbroadEdit(props){
         <div className={classes.space}> </div>
 
          <div className={classes.div}>French Inputs</div>
-         <SelectInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
+         <AutocompleteInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
          label="Pays de destination" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="advantage_french" validate={validateRich}   label="" 
          helperText="Entrez les avantages dans ce pays" validate={validateRich} />
@@ -108,6 +110,8 @@ export function AbroadEdit(props){
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
+              <TextInput source="img_title" validate={validateText} className={classes.textInput} 
+              label="Enter the title of the image"  variant="outlined" InputLabelProps={{shrink: true,}}/>
            </SimpleFormIterator>
          </ArrayInput>
         

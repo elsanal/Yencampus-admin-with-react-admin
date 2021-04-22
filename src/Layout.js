@@ -14,7 +14,7 @@ import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 
-import logo from './icon.jpeg'
+import logo from './logo.png'
 
 
 import useStyles from './useStyles';
@@ -44,12 +44,13 @@ const MyAppBar = props =>{
                     </Typography>
                     <IconButton className={classes.avatar}  onClick={handleChange} >
                         <Avatar   alt="admin" src={logo} />
+                        
+                   </IconButton>
+                   <IconButton className={classes.avatar}  onClick={handleChange} >
                         <Typography  edge="end" variant="h6" >
                         Logout
                        </Typography>
                    </IconButton>
-                   
-                
             </Toolbar>
             </div>
 
