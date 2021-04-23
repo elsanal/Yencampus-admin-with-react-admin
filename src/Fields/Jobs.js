@@ -12,7 +12,7 @@ import {
 } from 'react-admin';
 import { useMediaQuery } from '@material-ui/core';
 import useStyles from '../useStyles' 
-import {countries, level, year} from '../constants'
+import {countries, contrat} from '../constants'
 import  firebase from 'firebase';
 import { TrendingUpRounded } from "@material-ui/icons";
 
@@ -26,10 +26,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
 
   export function JobCreate(props){
     const classes = useStyles();
-    const configureQuill = quill => quill.getModule('toolbar').addHandler('bold', function (value) {
-      this.quill.format('bold', value)
-  });
-  
+
   console.log(timestamp)
   const transform = data => ({
     ...data,
@@ -44,6 +41,8 @@ import { TrendingUpRounded } from "@material-ui/icons";
          label="Name of the Job"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <AutocompleteInput source="country_english"  className={classes.selectInput} choices={countries.en} 
          label="Provider country" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <SelectInput source="contrat_type"  className={classes.selectInput} choices={contrat.en} 
+         label="Type of contrat" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_english" validate={validateRich}   label="" 
          helperText="Enter the description" />
         <RichTextInput source="requirement_english" validate={validateRich}   label="" 
@@ -55,6 +54,8 @@ import { TrendingUpRounded } from "@material-ui/icons";
          label="Nom du travail"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <AutocompleteInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
          label="Pays donneur" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <SelectInput source="contrat_type"  className={classes.selectInput} choices={contrat.fr} 
+         label="Type de contrat" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_french" validate={validateRich}   label="" 
          helperText="Entrez la description" />
         <RichTextInput source="requirement_french" validate={validateRich}   label="" 
@@ -62,8 +63,6 @@ import { TrendingUpRounded } from "@material-ui/icons";
          <div className={classes.space}> </div>
 
          <div className={classes.div}>Common Inputs</div>
-         <SelectInput source="contrat_type"  className={classes.selectInput} choices={year} 
-         label="Select contrat" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="duration" validate={validateText} className={classes.textInput} 
          label="Enter the duration"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="salary" validate={validateText} className={classes.textInput} 
@@ -103,6 +102,8 @@ export function JobEdit(props){
          label="Name of the Job"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <AutocompleteInput source="country_english"  className={classes.selectInput} choices={countries.en} 
          label="Provider country" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <SelectInput source="contrat_type"  className={classes.selectInput} choices={contrat.en} 
+         label="Type of contrat" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_english" validate={validateRich}   label="" 
          helperText="Enter the description" />
         <RichTextInput source="requirement_english" validate={validateRich}   label="" 
@@ -114,6 +115,8 @@ export function JobEdit(props){
          label="Nom du travail"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <AutocompleteInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
          label="Pays donneur" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <SelectInput source="contrat_type"  className={classes.selectInput} choices={contrat.fr} 
+         label="Type de contrat" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="description_french" validate={validateRich}   label="" 
          helperText="Entrez la description" />
         <RichTextInput source="requirement_french" validate={validateRich}   label="" 
@@ -121,16 +124,13 @@ export function JobEdit(props){
          <div className={classes.space}> </div>
 
          <div className={classes.div}>Common Inputs</div>
-         <SelectInput source="contrat_type"  className={classes.selectInput} choices={year} 
-         label="Select contrat" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
+         
          <TextInput source="duration" validate={validateText} className={classes.textInput} 
          label="Enter the duration"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="salary" validate={validateText} className={classes.textInput} 
          label="Enter the salary"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="official_web" validate={validateText} className={classes.textInput} 
          label="Official Website"  variant="outlined" InputLabelProps={{shrink: true,}}/>
-          <TextInput source="apply_link" validate={validateText} className={classes.textInput} 
-         label="Application link"  variant="outlined" InputLabelProps={{shrink: true,}}/>
         <DateInput source="deadline" validate={required()} className={classes.dateInput} helperText="Deadline" label=""/>
         <ArrayInput source="images">
            <SimpleFormIterator>

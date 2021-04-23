@@ -41,7 +41,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
          <AutocompleteInput source="country_english"  className={classes.selectInput} choices={countries.en} 
          label="Destination country" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
         <RichTextInput source="advantage_english" validate={validateRich}   label="" 
-         helperText="Enter the in this country" />
+         helperText="Enter the advantage in this country" />
         <RichTextInput source="desadvantage_english" validate={validateRich}   label="" 
          helperText="Enter the desadvantage in this country" validate={validateRich} />
         
