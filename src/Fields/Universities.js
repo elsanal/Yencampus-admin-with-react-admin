@@ -42,10 +42,24 @@ import { TrendingUpRounded } from "@material-ui/icons";
          label="Name of the university"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <AutocompleteInput source="country_english"  className={classes.selectInput} choices={countries.en} 
          label="University country" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-        <AutocompleteArrayInput source="major_english"  className={classes.selectInput} choices={level.fr} 
-         label="Select majors or department" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <AutocompleteArrayInput source="top_major_english"  className={classes.selectInput} choices={level.fr} 
-         label="Select the best majors or department" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
+          <ArrayInput source="depart_english" label="Name of departements">
+          <SimpleFormIterator>
+            <TextInput source="depart_name_english" validate={validateText} className={classes.textInput} 
+            label="Name of departement"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+            <ArrayInput source="major_english">
+              <SimpleFormIterator>
+                <TextInput source="major_name_english" validate={validateText} className={classes.textInput} 
+                label="Name of major"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+              </SimpleFormIterator>
+            </ArrayInput> 
+          </SimpleFormIterator>
+        </ArrayInput>
+        <ArrayInput source="top_major_english" label="Name of top majors">
+              <SimpleFormIterator>
+                <TextInput source="major_name_english" validate={validateText} className={classes.textInput} 
+                label="Name of major"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+              </SimpleFormIterator>
+        </ArrayInput> 
         <RichTextInput source="description_english" validate={validateRich}   label="" 
          helperText="Enter the description" />
         <div className={classes.space}> </div>
@@ -54,11 +68,25 @@ import { TrendingUpRounded } from "@material-ui/icons";
          <TextInput source="name_french" validate={validateText} className={classes.textInput} 
          label="Nom de l'university"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <AutocompleteInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
-         label="Pays de l'university" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <AutocompleteArrayInput source="major_french"  className={classes.selectInput} choices={level.fr} 
-         label="Choisir les filieres ou departements" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <AutocompleteArrayInput source="top_major_french"  className={classes.selectInput} choices={level.fr} 
-         label="Choisir les meilleures filieres ou departements" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
+         label="Pays de l'university" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/> 
+         <ArrayInput source="depart_french" label="Nom du departement">
+          <SimpleFormIterator>
+            <TextInput source="depart_name_french" validate={validateText} className={classes.textInput} 
+            label="Nom des departements"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+            <ArrayInput source="major_french" >
+              <SimpleFormIterator>
+                <TextInput source="major_name_french" validate={validateText} className={classes.textInput} 
+                label="Nom de la filiere"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+              </SimpleFormIterator>
+            </ArrayInput> 
+          </SimpleFormIterator>
+        </ArrayInput>
+        <ArrayInput source="top_major_french" label="Nom des top filieres">
+              <SimpleFormIterator>
+                <TextInput source="major_name_french" validate={validateText} className={classes.textInput} 
+                label="No de la filiere"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+              </SimpleFormIterator>
+            </ArrayInput> 
         <RichTextInput source="description_french" validate={validateRich}   label="" 
          helperText="Entrez la description" />
          <div className={classes.space}> </div>
@@ -108,10 +136,24 @@ export function UniversityEdit(props){
          label="Name of the university"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <AutocompleteInput source="country_english"  className={classes.selectInput} choices={countries.en} 
          label="University country" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-        <AutocompleteArrayInput source="major_english"  className={classes.selectInput} choices={level.fr} 
-         label="Select majors or department" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <AutocompleteArrayInput source="top_major_english"  className={classes.selectInput} choices={level.fr} 
-         label="Select the best majors or department" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <ArrayInput source="depart_english" label="Name of departements">
+          <SimpleFormIterator>
+            <TextInput source="depart_name_english" validate={validateText} className={classes.textInput} 
+            label="Name of departements"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+            <ArrayInput source="major_english" >
+              <SimpleFormIterator>
+                <TextInput source="major_name_english" validate={validateText} className={classes.textInput} 
+                label="Name of major"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+              </SimpleFormIterator>
+            </ArrayInput> 
+          </SimpleFormIterator>
+        </ArrayInput>
+        <ArrayInput source="top_major_english" label="Name of top majors">
+              <SimpleFormIterator>
+                <TextInput source="major_name_english" validate={validateText} className={classes.textInput} 
+                label="Name of major"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+              </SimpleFormIterator>
+            </ArrayInput> 
         <RichTextInput source="description_english" validate={validateRich}   label="" 
          helperText="Enter the description" />
         <div className={classes.space}> </div>
@@ -121,10 +163,24 @@ export function UniversityEdit(props){
          label="Nom de l'university"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <AutocompleteInput source="country_french"  className={classes.selectInput} choices={countries.fr} 
          label="Pays de l'university" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <AutocompleteArrayInput source="major_french"  className={classes.selectInput} choices={level.fr} 
-         label="Choisir les filieres ou departements" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <AutocompleteArrayInput source="top_major_french"  className={classes.selectInput} choices={level.fr} 
-         label="Choisir les meilleures filieres ou departements" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <ArrayInput source="depart_french" label="Nom des departements">
+          <SimpleFormIterator>
+            <TextInput source="depart_name_french" validate={validateText} className={classes.textInput} 
+            label="Nom du departement"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+            <ArrayInput source="major_french">
+              <SimpleFormIterator>
+                <TextInput source="major_name_french" validate={validateText} className={classes.textInput} 
+                label="Nom de la filiere"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+              </SimpleFormIterator>
+            </ArrayInput> 
+          </SimpleFormIterator>
+        </ArrayInput>
+        <ArrayInput source="top_major_french" label="Nom des top filieres">
+              <SimpleFormIterator>
+                <TextInput source="major_name_french" validate={validateText} className={classes.textInput} 
+                label="Nom de la filiere"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
+              </SimpleFormIterator>
+            </ArrayInput> 
         <RichTextInput source="description_french" validate={validateRich}   label="" 
          helperText="Entrez la description" />
          <div className={classes.space}> </div>

@@ -78,7 +78,6 @@ var countries =
         {id:"United Arab Emirates",name:"United Arab Emirates"},{id:"United Kingdom",name:"United Kingdom"},{id:"USA",name:"USA"},
         {id:"Uraguay",name:"Uraguay"},{id:"Vietnam",name:"Vietnam"},{id:"Zambia",name:"Zambia"},
         {id:"Zimbabwe",name:"Zimbabwe"}
-
     ]
     }
 
@@ -131,6 +130,49 @@ var level =  {
     ]
 }
 
+////////////////////////// Contrat //////////////////////////
+
+var contrat =  {
+    "fr":[
+        {id:"Tous",name:"Tous"},
+        {id:"CDD",name:"CDD"},
+        {id:"CDI",name:"CDI"},
+        {id:"Formation",name:"Formation"},
+        {id:"Stage",name:"Stage"}
+    ],
+    "en":[
+        {id:"All",name:"All"},
+        {id:"Full time",name:"Full time"},
+        {id:"Internship",name:"Internship"},
+        {id:"Partial time",name:"Partial time"},
+        {id:"Formation",name:"Formation"}
+    ]
+}
+
+////////////////////// majors //////////////////
+
+var majors = {
+    "fr":[
+        {id:"Médécine",name:"Médécine"},{id:"Mathématiques",name:"Mathématiques"},{id:"Musique",name:"Musique"},
+        {id:"Droit",name:"Droit"},{id:"Informatique",name:"Informatique"},{id:"Économie",name:"Économie"},
+        {id:"Gestion",name:"Gestion"},{id:"Hôtellerie",name:"Hôtellerie"},{id:"Restauration",name:"Restauration"},
+        {id:"Langues",name:"Langues"},{id:"Ingeniérie",name:"Ingeniérie"},{id:"Chimie",name:"Chimie"},
+        {id:"Physique",name:"Physique"},{id:"Environnement",name:"Environnement"},{id:"Genie Elctronique",name:"Genie Electronique"},
+        {id:"Commerce",name:"Commerce"},{id:"Management",name:"Management"},{id:"Logistique Transport Transit",name:"Logistique Transport Transit"},
+        {id:"Communication d'Entreprise",name:"Communication d'Entreprise"},{id:"Marketing et Gestion Commerciale",name:"Marketing et Gestion Commerciale"},{id:"Banque et Microfinance",name:"Banque et Microfinance"},
+        {id:"Finance-Comptabilité",name:"Finance-Comptabilité"},{id:"Gestion des Ressources Humaines",name:"Gestion des Ressources Humaines"},{id:"Secrétariat de Direction Bureautique",name:"Secrétariat de Direction Bureautique"},
+        {id:"Assistant de Direction",name:"Assitant de Direction"},{id:"Gestion des Projets",name:"Gestion de Projets"},{id:"",name:""},
+        {id:"",name:""},{id:"",name:""},{id:"",name:""},
+        {id:"",name:""},{id:"",name:""},{id:"",name:""},
+        {id:"",name:""},{id:"",name:""},{id:"",name:""},
+        {id:"",name:""},{id:"",name:""},{id:"",name:""},
+        {id:"",name:""},{id:"",name:""},{id:"",name:""},
+        {id:"",name:""},{id:"",name:""},{id:"",name:""},
+        {id:"",name:""},{id:"",name:""},{id:"",name:""},
+    ]
+}
+
+
 ///////////////////////  Year /////////////////////
 
 var year =[
@@ -157,5 +199,5 @@ var year =[
 ]
 
 
-export  {countries, level, year}
+export  {countries, level, year, contrat}
 

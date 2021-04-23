@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
         variant:'outlined'
       },
     selectInput:{
-        display:'inline-flex',
+        //display:'inline-flex',
           // backgroundColor:'#FFFFFF',
           fontWeight:'bold',
         //   border: '2px solid black',
