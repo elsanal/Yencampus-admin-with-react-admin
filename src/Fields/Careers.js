@@ -132,7 +132,7 @@ export const CareerList = props => {
                 <Datagrid className={classes.dataGrid} rowStyle={postRowStyle}>
                     <TextField source="id" />
                     <TextField source="name_english"/>
-                    <RichTextField source="description_english"/>
+                    <RichTextField source="name_french"/>
                     <DateField source="lastupdate"/>
                     <EditButton className={classes.editButton}/>
                 </Datagrid>  

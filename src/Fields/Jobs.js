@@ -63,6 +63,12 @@ import { TrendingUpRounded } from "@material-ui/icons";
          <div className={classes.space}> </div>
 
          <div className={classes.div}>Common Inputs</div>
+         <TextInput source="city" validate={validateText} className={classes.textInput} 
+         label="City"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <TextInput source="email" validate={validateText} className={classes.textInput} 
+         label="Email"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <TextInput source="tel" validate={validateText} className={classes.textInput} 
+         label="Telephone"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="duration" validate={validateText} className={classes.textInput} 
          label="Enter the duration"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="salary" validate={validateText} className={classes.textInput} 
@@ -124,7 +130,12 @@ export function JobEdit(props){
          <div className={classes.space}> </div>
 
          <div className={classes.div}>Common Inputs</div>
-         
+         <TextInput source="city" validate={validateText} className={classes.textInput} 
+         label="City"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <TextInput source="email" validate={validateText} className={classes.textInput} 
+         label="Email"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <TextInput source="tel" validate={validateText} className={classes.textInput} 
+         label="Telephone"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="duration" validate={validateText} className={classes.textInput} 
          label="Enter the duration"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="salary" validate={validateText} className={classes.textInput} 

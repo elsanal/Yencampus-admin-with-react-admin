@@ -97,6 +97,8 @@ import { TrendingUpRounded } from "@material-ui/icons";
         <DateInput source="deadline" validate={required()} className={classes.dateInput} helperText="Deadline" label=""/>
          <BooleanInput defaultValue = {false} source="isTopScholar"  
          label="is it a top scholarship?" className={classes.boolanInput}/>
+         <BooleanInput defaultValue = {false} source="isOpen"  
+         label="is open to application?" className={classes.boolanInput}/>
          <ArrayInput source="images">
            <SimpleFormIterator>
                 <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
@@ -183,6 +185,8 @@ export function ScholarshipEdit(props){
         <DateInput source="deadline" validate={required()} className={classes.dateInput} helperText="Deadline" label=""/>
          <BooleanInput defaultValue = {false} source="isTopScholar"  
          label="is it a top scholarship?" className={classes.boolanInput}/>
+         <BooleanInput defaultValue = {false} source="isOpen"  
+         label="is open to application?" className={classes.boolanInput}/>
          <ArrayInput source="images">
            <SimpleFormIterator>
                 <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
