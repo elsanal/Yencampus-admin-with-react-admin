@@ -57,7 +57,7 @@ import useStyles from '../useStyles'
          <div className={classes.space}> </div>
          <ArrayInput source="images">
            <SimpleFormIterator>
-                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
+                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png,.jpg" label="" 
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
@@ -103,7 +103,7 @@ export function CareerEdit(props){
          <div className={classes.space}> </div>
          <ArrayInput source="images">
            <SimpleFormIterator>
-                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
+                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png,.jpg" label="" 
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
@@ -119,7 +119,7 @@ export function CareerEdit(props){
 const date = new Date().toISOString().substr(0, 10)
 
 const postRowStyle = (record) => ({
-  backgroundColor: record.lastupdate > record.createdate ? 'green' : 'white',
+  backgroundColor: record.lastupdate > record.createdate ? 'green' : 'green',
   color:'black',
   fontWeight:'bold',
 });

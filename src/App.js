@@ -8,6 +8,7 @@ import {ScholarshipList,ScholarshipEdit,ScholarshipCreate} from './Fields/Schola
 import {LifeList,LifeEdit,LifeCreate} from './Fields/StudentLife'
 import {AbroadList,AbroadEdit,AbroadCreate} from './Fields/StudyAbroad'
 import {UniversityList,UniversityEdit,UniversityCreate} from './Fields/Universities'
+import {ImagesList,ImagesEdit,ImagesCreate} from './Fields/Images'
 
 
 import { createMuiTheme } from '@material-ui/core/styles';
@@ -17,6 +18,7 @@ import Career from '@material-ui/icons/BusinessCenter';
 import Job from '@material-ui/icons/Work';
 import Abroad from '@material-ui/icons/Flight';
 import Life from '@material-ui/icons/People';
+import Image from '@material-ui/icons/PhotoLibrary';
 
 
 
@@ -47,6 +49,7 @@ function App() {
         <Resource name="student_life" list={LifeList} create={LifeCreate} edit={LifeEdit} icon={Life}/>
         <Resource name="study_abroad" list={AbroadList} create={AbroadCreate} edit={AbroadEdit} icon={Abroad}/>
         <Resource name="university" list={UniversityList} create={UniversityCreate} edit={UniversityEdit} icon={University}/>
+        <Resource name="images" list={ImagesList} create={ImagesCreate} edit={ImagesEdit} icon={Image}/>
       </Admin>
   );
 }

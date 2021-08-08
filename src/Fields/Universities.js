@@ -46,7 +46,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
           <SimpleFormIterator>
             <TextInput source="depart_name" validate={validateText} className={classes.textInput} 
             label="Name of departement"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
-            <ArrayInput source="major_english" label="">
+            <ArrayInput source="major" label="">
               <SimpleFormIterator>
                 <TextInput source="major_name" validate={validateText} className={classes.textInput} 
                 label="Name of major"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
@@ -73,7 +73,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
           <SimpleFormIterator>
             <TextInput source="depart_name" validate={validateText} className={classes.textInput} 
             label="Nom du departement"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
-            <ArrayInput source="major_french" label="">
+            <ArrayInput source="major" label="">
               <SimpleFormIterator>
                 <TextInput source="major_name" validate={validateText} className={classes.textInput} 
                 label="Nom de la filiere"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
@@ -100,7 +100,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
          label="Official Website"  variant="outlined" InputLabelProps={{shrink: true,}}/>
           <TextInput source="apply_link" validate={validateText} className={classes.textInput} 
          label="Application link"  variant="outlined" InputLabelProps={{shrink: true,}}/>
-         <NumberInput source="worl_ranking" validate={validateText} className={classes.textInput} 
+         <NumberInput source="world_ranking" validate={validateText} className={classes.textInput} 
          label="Worl ranking"  variant="outlined" InputLabelProps={{shrink: true,}}/>
           <NumberInput source="national_ranking" validate={validateText} className={classes.textInput} 
          label="National ranking"  variant="outlined" InputLabelProps={{shrink: true,}}/>
@@ -109,9 +109,11 @@ import { TrendingUpRounded } from "@material-ui/icons";
          label="is it a top university?" className={classes.boolanInput}/>
         <BooleanInput defaultValue = {false} source="isOpen"  
          label="is open to application?" className={classes.boolanInput}/>
+         <BooleanInput defaultValue = {false} source="isPublic"  
+         label="is a public University?" className={classes.boolanInput}/>
         <ArrayInput source="images">
            <SimpleFormIterator>
-                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
+                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png,.jpg" label="" 
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
@@ -144,7 +146,7 @@ export function UniversityEdit(props){
           <SimpleFormIterator>
             <TextInput source="depart_name" validate={validateText} className={classes.textInput} 
             label="Name of departements"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
-            <ArrayInput source="major_english" label="">
+            <ArrayInput source="major" label="">
               <SimpleFormIterator>
                 <TextInput source="major_name" validate={validateText} className={classes.textInput} 
                 label="Name of major"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
@@ -171,7 +173,7 @@ export function UniversityEdit(props){
           <SimpleFormIterator>
             <TextInput source="depart_name" validate={validateText} className={classes.textInput} 
             label="Nom du departement"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
-            <ArrayInput source="major_french" label="">
+            <ArrayInput source="major" label="">
               <SimpleFormIterator>
                 <TextInput source="major_name" validate={validateText} className={classes.textInput} 
                 label="Nom de la filiere"  variant="outlined" InputLabelProps={{shrink: true,}}/>    
@@ -207,9 +209,11 @@ export function UniversityEdit(props){
          label="is it a top university?" className={classes.boolanInput}/>
          <BooleanInput defaultValue = {false} source="isOpen"  
          label="is open to application?" className={classes.boolanInput}/>
+         <BooleanInput defaultValue = {false} source="isPublic"  
+         label="is a public University?" className={classes.boolanInput}/>
          <ArrayInput source="images">
            <SimpleFormIterator>
-                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
+                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png,.jpg" label="" 
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
@@ -225,7 +229,7 @@ export function UniversityEdit(props){
 const date = new Date().toISOString().substr(0, 10)
 
 const postRowStyle = (record) => ({
-  backgroundColor: record.deadline < date ? 'red' : 'green',
+  backgroundColor: record.isOpen? 'green' : 'red',
   color:'black',
   fontWeight:'bold',
 });

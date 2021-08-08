@@ -56,7 +56,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
          helperText="Enter the documents" />
         <RichTextInput source="how_apply_english" validate={validateRich}   label="" 
          helperText="Explain how to apply" />
-        <RichTextInput source="other_detail_english" validate={validateRich}   label="" 
+        <RichTextInput source="other_detail_english"    label="" 
          helperText="Enter other details" />
         <div className={classes.space}> </div>
 
@@ -79,7 +79,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
          helperText="Entrez les documents" />
         <RichTextInput source="how_apply_french" validate={validateRich}   label="" 
          helperText="Comment postuler?" />
-        <RichTextInput source="other_detail_french" validate={validateRich}   label="" 
+        <RichTextInput source="other_detail_french"    label="" 
          helperText="Entrez les autres details" />
          <div className={classes.space}> </div>
 
@@ -88,6 +88,8 @@ import { TrendingUpRounded } from "@material-ui/icons";
          label="Select year" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="duration" validate={validateText} className={classes.textInput} 
          label="Enter the duration"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+          <BooleanInput defaultValue = {false} source="isYear"  
+         label="is year?" className={classes.boolanInput}/>
          <TextInput source="amount" validate={validateText} className={classes.textInput} 
          label="Enter the amount"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="official_web" validate={validateText} className={classes.textInput} 
@@ -99,9 +101,11 @@ import { TrendingUpRounded } from "@material-ui/icons";
          label="is it a top scholarship?" className={classes.boolanInput}/>
          <BooleanInput defaultValue = {false} source="isOpen"  
          label="is open to application?" className={classes.boolanInput}/>
+         <BooleanInput defaultValue = {false} source="isFull"  
+         label="is full funded?" className={classes.boolanInput}/>
          <ArrayInput source="images">
            <SimpleFormIterator>
-                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
+                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png,.jpg" label="" 
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
@@ -144,7 +148,7 @@ export function ScholarshipEdit(props){
          helperText="Enter the documents" />
         <RichTextInput source="how_apply_english" validate={validateRich}   label="" 
          helperText="Explain how to apply" />
-        <RichTextInput source="other_detail_english" validate={validateRich}   label="" 
+        <RichTextInput source="other_detail_english"    label="" 
          helperText="Enter other details" />
         <div className={classes.space}> </div>
 
@@ -167,7 +171,7 @@ export function ScholarshipEdit(props){
          helperText="Entrez les documents" />
         <RichTextInput source="how_apply_french" validate={validateRich}   label="" 
          helperText="Comment postuler?" />
-        <RichTextInput source="other_detail_french" validate={validateRich}   label="" 
+        <RichTextInput source="other_detail_french"    label="" 
          helperText="Entrez les autres details" />
          <div className={classes.space}> </div>
 
@@ -176,6 +180,8 @@ export function ScholarshipEdit(props){
          label="Select year" fullwidth variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="duration" validate={validateText} className={classes.textInput} 
          label="Enter the duration"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <BooleanInput defaultValue = {false} source="isYear"  
+         label="is year?" className={classes.boolanInput}/>
          <TextInput source="amount" validate={validateText} className={classes.textInput} 
          label="Enter the amount"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="official_web" validate={validateText} className={classes.textInput} 
@@ -187,9 +193,11 @@ export function ScholarshipEdit(props){
          label="is it a top scholarship?" className={classes.boolanInput}/>
          <BooleanInput defaultValue = {false} source="isOpen"  
          label="is open to application?" className={classes.boolanInput}/>
+         <BooleanInput defaultValue = {false} source="isFull"  
+         label="is full funded?" className={classes.boolanInput}/>
          <ArrayInput source="images">
            <SimpleFormIterator>
-                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png" label="" 
+                <ImageInput source="src" accept="image/*.jpg,.jpeg,.png,.jpg" label="" 
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
@@ -221,6 +229,7 @@ export const ScholarshipList = props => {
                     <TextField source="country_english" placeholder="No defined"/>
                     <NumberField source="year"/>
                     <TextField source="duration"/>
+                    <TextField source="isFull"/>
                     <TextField source="amount"/>
                     <DateField source="deadline"/>
                     <EditButton className={classes.editButton}/>
