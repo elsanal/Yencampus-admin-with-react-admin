@@ -1,4 +1,3 @@
-
 import {Admin, Resource} from 'react-admin'
 import {dataProvider,authProvider} from './Firebase/config'
 import {MyLayout} from './Layout'

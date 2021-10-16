@@ -95,7 +95,9 @@ import { TrendingUpRounded } from "@material-ui/icons";
          <TextInput source="city" validate={validateText} className={classes.textInput} 
          label="City"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="school_fee" validate={validateText} className={classes.textInput} 
-         label="Frais de scolarité"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         label="School fees"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <TextInput source="app_fee" validate={validateText} className={classes.textInput} 
+         label="Application fees"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="official_web" validate={validateText} className={classes.textInput} 
          label="Official Website"  variant="outlined" InputLabelProps={{shrink: true,}}/>
           <TextInput source="apply_link" validate={validateText} className={classes.textInput} 
@@ -109,6 +111,8 @@ import { TrendingUpRounded } from "@material-ui/icons";
          label="is it a top university?" className={classes.boolanInput}/>
         <BooleanInput defaultValue = {false} source="isOpen"  
          label="is open to application?" className={classes.boolanInput}/>
+         <BooleanInput defaultValue = {false} source="isLowCost"  
+         label="is low cost university?" className={classes.boolanInput}/>
          <BooleanInput defaultValue = {false} source="isPublic"  
          label="is a public University?" className={classes.boolanInput}/>
         <ArrayInput source="images">
@@ -195,7 +199,9 @@ export function UniversityEdit(props){
          <TextInput source="city" validate={validateText} className={classes.textInput} 
          label="City"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="school_fee" validate={validateText} className={classes.textInput} 
-         label="Frais de scolarité"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         label="School fees"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+         <TextInput source="app_fee" validate={validateText} className={classes.textInput} 
+         label="Application fees"  variant="outlined" InputLabelProps={{shrink: true,}}/>
          <TextInput source="official_web" validate={validateText} className={classes.textInput} 
          label="Official Website"  variant="outlined" InputLabelProps={{shrink: true,}}/>
           <TextInput source="apply_link" validate={validateText} className={classes.textInput} 
@@ -209,6 +215,8 @@ export function UniversityEdit(props){
          label="is it a top university?" className={classes.boolanInput}/>
          <BooleanInput defaultValue = {false} source="isOpen"  
          label="is open to application?" className={classes.boolanInput}/>
+         <BooleanInput defaultValue = {false} source="isLowCost"  
+         label="is low cost university?" className={classes.boolanInput}/>
          <BooleanInput defaultValue = {false} source="isPublic"  
          label="is a public University?" className={classes.boolanInput}/>
          <ArrayInput source="images">

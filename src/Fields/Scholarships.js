@@ -109,8 +109,7 @@ import { TrendingUpRounded } from "@material-ui/icons";
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
-              <TextInput source="img_title" validate={validateText} className={classes.textInput} 
-              label="Enter the title of the image"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+              
            </SimpleFormIterator>
          </ArrayInput>
 
@@ -201,8 +200,7 @@ export function ScholarshipEdit(props){
               helperText="Select an image" validate={required()} className={classes.imageInput}>
                   <ImageField source="src"  />
               </ImageInput>
-              <TextInput source="img_title" validate={validateText} className={classes.textInput} 
-              label="Enter the title of the image"  variant="outlined" InputLabelProps={{shrink: true,}}/>
+              
            </SimpleFormIterator>
          </ArrayInput>
      </SimpleForm>

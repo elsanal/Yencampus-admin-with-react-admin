@@ -10,13 +10,33 @@ const firebaseConfig = {
     measurementId: "G-4CFS4F4BNL"
   };
 
-// const firebaseApp = firebase.initializeApp(firebaseConfig);
+  const App = firebase.initializeApp(firebaseConfig);
+  
+  const options = {
+  
+    // rootRef: 'root-collection/some-doc' | () => 'root-collection/some-doc',
+    // Your own, previously initialized firebase app instance
+    app: App,
+    logging: true,
+    persistence: 'session',
+    dontAddIdFieldToDoc: false,
+    softDelete: false,
+    associateUsersById: false,
+    metaFieldCasing: 'lower',
+    relativeFilePaths: false, 
+    useFileNamesInStorage: false, 
+    lazyLoading: {
+      enabled: false
+    },
+    firestoreCostsLogger: {
+      enabled: false,
+    }
+  }
 
-// const db = firebaseApp.firestore();
-// firebase.initializeApp(firebaseConfig);
 
-const dataProvider = FirebaseDataProvider(firebaseConfig);//
-const authProvider = FirebaseAuthProvider(firebaseConfig);
+
+const dataProvider = FirebaseDataProvider(App, options);//
+const authProvider = FirebaseAuthProvider(App, options);
 
 
 export  {dataProvider,authProvider};
